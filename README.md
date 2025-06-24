@@ -1,12 +1,12 @@
 # SpringBoot + React Web App – DevOps Edition
 
 **Frontend**  
-[![CI pipeline](https://github.com/HasanAshab/spring-react-devops/actions/workflows/frontend-ci.yaml/badge.svg)](https://github.com/HasanAshab/spring-react-devops/actions/workflows/frontend-ci.yaml)
-[![image size](https://ghcr-badge.egpl.dev/hasanashab/spring-react-devops-frontend/size)](https://github.com/HasanAshab/go-web-app-devops/pkgs/container/spring-react-devops-frontend)
+[![CI pipeline](https://github.com/HasanAshab/spring-react-devops-appservice/actions/workflows/frontend-ci.yaml/badge.svg)](https://github.com/HasanAshab/spring-react-devops-appservice/actions/workflows/frontend-ci.yaml)
+[![image size](https://ghcr-badge.egpl.dev/hasanashab/spring-react-devops-appservice-frontend/size)](https://github.com/HasanAshab/go-web-app-devops/pkgs/container/spring-react-devops-appservice-frontend)
 
 **Backend**  
-[![CI pipeline](https://github.com/HasanAshab/spring-react-devops/actions/workflows/backend-ci.yaml/badge.svg)](https://github.com/HasanAshab/spring-react-devops/actions/workflows/backend-ci.yaml)
-[![image size](https://ghcr-badge.egpl.dev/hasanashab/spring-react-devops-backend/size)](https://github.com/HasanAshab/go-web-app-devops/pkgs/container/spring-react-devops-backend)
+[![CI pipeline](https://github.com/HasanAshab/spring-react-devops-appservice/actions/workflows/backend-ci.yaml/badge.svg)](https://github.com/HasanAshab/spring-react-devops-appservice/actions/workflows/backend-ci.yaml)
+[![image size](https://ghcr-badge.egpl.dev/hasanashab/spring-react-devops-appservice-backend/size)](https://github.com/HasanAshab/go-web-app-devops/pkgs/container/spring-react-devops-appservice-backend)
 
 
 This is a DevOps-enhanced deployment of a [spring + react based web app](https://github.com/purshink/ReactJS-Spring-Boot-Full-Stack-App), restructured and productionized with best practices for containerization, CI/CD, and Kubernetes.

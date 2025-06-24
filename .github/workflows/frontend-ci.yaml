@@ -87,6 +87,7 @@ jobs:
     env:
       REGISTRY: ghcr.io
       SUFFIX: frontend
+      REACT_APP_API_URL: "https://app-backend.privatelink.azurewebsites.net"
     outputs:
       image_tag: ${{ steps.set_output.outputs.image_tag }}
       image_tag_short: ${{ steps.set_output.outputs.image_tag_short }}
@@ -129,6 +130,8 @@ jobs:
           load: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            REACT_APP_API_URL=${{ env.REACT_APP_API_URL }}
 
       - name: Set image tag outputs
         id: set_output
@@ -168,30 +171,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-
-  # update-helm:
-  #   name: Sync helm chart image tag
-  #   runs-on: ubuntu-latest
-  #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-  #   needs: docker
-  #   steps:
-  #     - uses: actions/checkout@v4
-
-  #     - name: Update tag in Helm chart and create PR
-  #       id: update-helm
-  #       uses: fjogeleit/yaml-update-action@v0.16.1
-  #       with:
-  #         valueFile: 'helm/go-web-app-chart/values.yaml'
-  #         propertyPath: 'image.tag'
-  #         value: ${{ needs.docker.outputs.image_tag }}
-  #         masterBranchName: main
-  #         targetBranch: main
-  #         branch: ci/helm-update-${{ needs.docker.outputs.image_tag_short }}
-  #         createPR: true
-  #         message: 'ci: update Helm chart image tag to ${{ needs.docker.outputs.image_tag_short }}...'
-
-  #     - name: Enable auto-merge
-  #       uses: peter-evans/enable-pull-request-automerge@v3
-  #       with:
-  #         pull-request-number: ${{ fromJson(steps.update-helm.outputs.pull_request).number }}
-  #         merge-method: squash
+          build-args: |
+            REACT_APP_API_URL=${{ env.REACT_APP_API_URL }}
