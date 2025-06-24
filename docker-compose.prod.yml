@@ -10,6 +10,7 @@ services:
       - backendfrontend-net
     depends_on:
       - backend
+    
 
   backend:
     build:

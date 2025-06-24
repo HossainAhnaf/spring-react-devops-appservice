@@ -87,7 +87,6 @@ jobs:
     env:
       REGISTRY: ghcr.io
       SUFFIX: frontend
-      REACT_APP_API_URL: "https://app-backend.privatelink.azurewebsites.net"
     outputs:
       image_tag: ${{ steps.set_output.outputs.image_tag }}
       image_tag_short: ${{ steps.set_output.outputs.image_tag_short }}
@@ -130,8 +129,6 @@ jobs:
           load: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-            REACT_APP_API_URL=${{ env.REACT_APP_API_URL }}
 
       - name: Set image tag outputs
         id: set_output
@@ -171,5 +168,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: |
-            REACT_APP_API_URL=${{ env.REACT_APP_API_URL }}

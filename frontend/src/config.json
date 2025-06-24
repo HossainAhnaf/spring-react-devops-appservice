@@ -1,0 +1,8 @@
+{
+  "development": {
+    "api_url": "http://localhost:8080"
+  },
+  "production": {
+    "api_url": "https://app-backend.privatelink.azurewebsites.net"
+  }
+}

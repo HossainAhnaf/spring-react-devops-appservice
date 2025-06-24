@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from "../customAxiosConfig/CustomAxiosConfig";
 
 const AuthenticateUserDataService = (username, password) => {
   return axios
-    .post(`http://localhost:8080/authenticate`, {
+    .post(`/authenticate`, {
       username,
       password,
     })
