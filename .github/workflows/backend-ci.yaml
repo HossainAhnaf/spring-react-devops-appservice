@@ -180,6 +180,9 @@ jobs:
     name: Update docker image tag on infra repo
     runs-on: ubuntu-latest
     needs: docker
+    defaults:
+      run:
+        working-directory: ./
     steps:
     - name: Checkout infra repo
       uses: actions/checkout@v4
