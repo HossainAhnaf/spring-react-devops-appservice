@@ -196,6 +196,7 @@ jobs:
         sed -i 's/^app_docker_image_tag *= *.*/app_docker_image_tag = "${{ needs.docker.outputs.image_tag }}"/' image.auto.tfvars
 
     - name: Create Pull Request
+      id: create-pr
       uses: peter-evans/create-pull-request@v6
       with:
         token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
