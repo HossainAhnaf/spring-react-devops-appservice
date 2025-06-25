@@ -204,3 +204,10 @@ jobs:
         branch: update-docker-tag-${{ needs.docker.outputs.image_tag_short }}
         committer: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
         author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+
+    - name: Enable auto-merge
+      uses: peter-evans/enable-pull-request-automerge@v3
+      with:
+        pull-request-number: ${{ steps.create-pr.outputs.pull-request-number }}
+        merge-method: squash
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
