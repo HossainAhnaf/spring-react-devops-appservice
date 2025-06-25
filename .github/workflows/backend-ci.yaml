@@ -199,7 +199,6 @@ jobs:
       uses: peter-evans/create-pull-request@v6
       with:
         token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-        path: infra
         commit-message: Update app docker image tag to ${{ needs.docker.outputs.image_tag }}
         title: Update app docker image tag to ${{ needs.docker.outputs.image_tag }}
         branch: update-docker-tag-${{ needs.docker.outputs.image_tag_short }}
