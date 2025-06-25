@@ -17,6 +17,12 @@ public class CorsConfig {
                         .allowedMethods("*")
                         .allowedHeaders("*")
                         .allowCredentials(true);
+
+                registry.addMapping("/**")
+                        .allowedOrigins("https://web-three-tier-app-prod-northeurope-001.azurewebsites.net")
+                        .allowedMethods("*")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);                
             }
         };
     }
