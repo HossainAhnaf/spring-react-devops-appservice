@@ -3,6 +3,6 @@
     "api_url": "http://localhost:8080"
   },
   "production": {
-    "api_url": "http://app-three-tier-app-prod-northeurope-001.privatelink.azurewebsites.net"
+    "api_url": "https://app-three-tier-app-prod-northeurope-001.privatelink.azurewebsites.net"
   }
 }
