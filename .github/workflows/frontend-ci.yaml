@@ -195,7 +195,7 @@ jobs:
         token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         commit-message: Update web docker image tag to ${{ needs.docker.outputs.image_tag }}
         title: Update web docker image tag to ${{ needs.docker.outputs.image_tag }}
-        branch: update-docker-tag
+        branch: update-web-docker-tag
         committer: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
         author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
 
