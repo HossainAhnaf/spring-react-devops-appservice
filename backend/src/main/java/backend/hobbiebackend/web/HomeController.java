@@ -17,7 +17,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.Set;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(
+    origins = {
+        "http://localhost:4200",
+        "https://web-three-tier-app-prod-northeurope-001.azurewebsites.net"
+    }
+)
 public class HomeController {
     private final HobbyService hobbyService;
 

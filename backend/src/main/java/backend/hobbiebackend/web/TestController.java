@@ -10,7 +10,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(
+    origins = {
+        "http://localhost:4200",
+        "https://web-three-tier-app-prod-northeurope-001.azurewebsites.net"
+    }
+)
 public class TestController {
 
     private final TestService testService;
