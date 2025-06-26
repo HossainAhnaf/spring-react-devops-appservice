@@ -24,12 +24,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/hobbies")
-@CrossOrigin(
-    origins = {
-        "http://localhost:4200",
-        "https://web-three-tier-app-prod-northeurope-001.azurewebsites.net"
-    }
-)
+@CrossOrigin(origins = "*")
 public class HobbyController {
     private final HobbyService hobbyService;
     private final CategoryService categoryService;

@@ -32,12 +32,7 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 
 @RestController
-@CrossOrigin(
-    origins = {
-        "http://localhost:4200",
-        "https://web-three-tier-app-prod-northeurope-001.azurewebsites.net"
-    }
-)
+@CrossOrigin(origins = "*")
 public class UserController {
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;
@@ -168,12 +163,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    @CrossOrigin(
-      origins = {
-          "http://localhost:4200",
-          "https://web-three-tier-app-prod-northeurope-001.azurewebsites.net"
-      }
-    )
+    @CrossOrigin(origins = "*")
     @Operation(summary = "Login based on user role after authentication", security = @SecurityRequirement(name = "bearerAuth"))
     public String logInUser(@RequestParam String username) {
         UserEntity userByUsername = this.userService.findUserByUsername(username);

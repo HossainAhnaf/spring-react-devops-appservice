@@ -13,16 +13,10 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:4200")
+                        .allowedOrigins("*")
                         .allowedMethods("*")
                         .allowedHeaders("*")
-                        .allowCredentials(true);
-
-                registry.addMapping("/**")
-                        .allowedOrigins("https://web-three-tier-app-prod-northeurope-001.azurewebsites.net")
-                        .allowedMethods("*")
-                        .allowedHeaders("*")
-                        .allowCredentials(true);                
+                        .allowCredentials(true);          
             }
         };
     }
