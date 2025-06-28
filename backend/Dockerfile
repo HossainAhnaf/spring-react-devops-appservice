@@ -11,11 +11,11 @@ RUN mvn dependency:go-offline
 COPY src ./src
 RUN mvn install -DskipTests
 
-EXPOSE 8080
-
 
 # Development stage with Maven
 FROM builder AS dev
+
+EXPOSE 8080
 
 CMD [ "mvn", "spring-boot:run" ]
 
@@ -35,6 +35,8 @@ VOLUME /tmp
 COPY --from=prepare-production /app/META-INF /app/META-INF
 COPY --from=prepare-production /app/BOOT-INF/classes /app
 COPY --from=prepare-production /app/BOOT-INF/lib /app/lib
+
+EXPOSE 80
 
 # Run the application
 ENTRYPOINT [ "java", "-cp","app:app/lib/*", "backend.hobbiebackend.HobbieBackendApplication" ]
